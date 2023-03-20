@@ -26,7 +26,6 @@ function App() {
   ];
 
   return (
-
     <div>
       <NewExpense />
       <Expenses expenseData={expenseData} />

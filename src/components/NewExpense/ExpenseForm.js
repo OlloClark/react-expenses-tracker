@@ -26,10 +26,12 @@ function ExpenseForm() {
       title: inputTitle,
       amount: inputAmount,
       date: new Date(inputDate),
-    }
+    };
 
-    console.log(expenseData)
-
+    console.log(expenseData);
+    setInputTitle("");
+    setInputAmount("");
+    setInputDate("");
   }
 
   return (
@@ -37,12 +39,13 @@ function ExpenseForm() {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input type="text" value={inputTitle} onChange={titleChangeHandler} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
             type="number"
+            value={inputAmount}
             onChange={amountChangeHandler}
             min="0.01"
             step="0.01"
@@ -52,6 +55,7 @@ function ExpenseForm() {
           <label>Date</label>
           <input
             type="date"
+            value={inputDate}
             onChange={dateChangeHandler}
             min="2019-01-01"
             max="2023-12-31"

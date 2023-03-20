@@ -18,7 +18,17 @@ function ExpenseForm() {
     setInputDate(event.target.value);
   }
 
-  function submitHandler() {
+  function submitHandler(event) {
+    //call preventDefault, because onSubmit naturally reloads the whole page
+    event.preventDefault();
+
+    const expenseData = {
+      title: inputTitle,
+      amount: inputAmount,
+      date: new Date(inputDate),
+    }
+
+    console.log(expenseData)
 
   }
 
